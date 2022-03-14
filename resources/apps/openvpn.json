@@ -1,0 +1,8 @@
+{
+  "name": "OpenVPN",
+  "id": "openvpn",
+  "description": "OpenVPN is a virtual private network (VPN) system",
+  "category": ["utility", "security"],
+  "icon": "resources/icons/openvpn.png",
+  "bashcmd": "pkexec chef-client -o recipe[app-openvpn] -L /var/log/chef/self_portal.log"
+}

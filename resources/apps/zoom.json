@@ -1,0 +1,8 @@
+{
+  "name": "Zoom",
+  "id": "zoom",
+  "description": "Zoom's secure, reliable video platform powers all of your communication needs.",
+  "category": ["communications"],
+  "icon": "resources/icons/zoom.png",
+  "bashcmd": "pkexec /usr/bin/chef-client -o recipe[app-zoom] -L /var/log/chef/self_portal.log"
+}

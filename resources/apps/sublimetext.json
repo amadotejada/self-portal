@@ -1,0 +1,8 @@
+{
+  "name": "Sublime Text",
+  "id": "sublimetext",
+  "description": "Sublime Text is a sophisticated text editor for code, markup and prose.",
+  "category": ["programming", "utility"],
+  "icon": "resources/icons/sublimetext.svg",
+  "bashcmd": "pkexec chef-client -o recipe[app-sublimetext] -L /var/log/chef/self_portal.log"
+}

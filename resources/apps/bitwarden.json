@@ -1,0 +1,8 @@
+{
+  "name": "Bitwarden",
+  "id": "bitwarden",
+  "description": "Bitwarden is an integrated open source password management solution.",
+  "category": ["utility", "security"],
+  "icon": "resources/icons/bitwarden.png",
+  "bashcmd": "pkexec chef-client -o recipe[app-bitwarden] -L /var/log/chef/self_portal.log"
+}

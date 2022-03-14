@@ -1,0 +1,8 @@
+{
+  "name": "CiscoVPN",
+  "id": "ciscovpn",
+  "description": "Cisco Systems VPN Client is a software application for connecting to virtual private networks.",
+  "category": ["utility", "security"],
+  "icon": "resources/icons/ciscovpn.png",
+  "bashcmd": "pkexec chef-client -o recipe[app-ciscovpn] -L /var/log/chef/self_portal.log"
+}

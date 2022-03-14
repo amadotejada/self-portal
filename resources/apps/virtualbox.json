@@ -1,0 +1,8 @@
+{
+  "name": "VirtualBox",
+  "id": "virtualbox",
+  "description": "Oracle VM VirtualBox is a free and open-source hosted hypervisor for x86 virtualization, developed by Oracle Corporation.",
+  "category": ["utility"],
+  "icon": "resources/icons/virtualbox.png",
+  "bashcmd": "pkexec chef-client -o recipe[app-virtualbox] -L /var/log/chef/self_portal.log"
+}

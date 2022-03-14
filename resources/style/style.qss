@@ -1,0 +1,213 @@
+QFrame#sidesection {
+    background: rgb(45, 45, 45);
+}
+
+QMessageBox {
+    background: rgb(45, 45, 45);
+}
+
+QMessageBox QPushButton{
+    min-width: 100;
+    min-height: 25;
+}
+
+QWidget#window {
+    background: rgb(18, 18, 18);
+}
+
+QLabel#apptitle {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+QLabel#apptitlewidget {
+    font-size: 16px;
+}
+
+QTextBrowser#appdesc {
+    background: rgb(45, 45, 45);
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+QToolTip {
+    background: rgb(30, 30, 30);
+    padding: 3 3 3 3;
+    color: white;
+    border: 1px solid rgb(55, 55, 55);
+}
+
+/* ==================== separator ====================*/
+
+QPushButton#morebutton {
+    background: rgb(30, 30, 30);
+    color: white;
+    border: 1px solid rgb(55, 55, 55);
+    border-radius: 8px;
+    min-width: 100px;
+    min-height: 25px;
+}
+
+QPushButton#morebutton:hover {
+    background: rgb(35, 35, 35);
+}
+
+QPushButton#morebutton:pressed {
+    background: rgb(25, 25, 25);
+}
+
+QPushButton#morebutton::menu-indicator {
+    width: 0px;
+}
+
+QMenu#moremenu {
+    padding: 3 3 3 3;
+    background: rgb(30, 30, 30);
+    color: white;
+    border: 1px solid rgb(55, 55, 55);
+    border-radius: 8px;
+}
+
+QMenu#moremenu::item {
+    padding: 5 25 5 5;
+    border-radius: 8px;
+}
+
+QMenu#moremenu::item:selected {
+    padding: 5 5 5 5;
+    background: rgb(45, 45, 45);
+    border-radius: 8px;
+}
+
+/* ==================== separator ====================*/
+QLineEdit {
+    padding: 5 5 5 5;
+    background: rgb(30, 30, 30);
+    color: white;
+    /*border: 1px solid rgb(128, 128, 128);*/
+    border: 1px solid rgb(225, 48, 38);
+    border-radius: 4px;
+}
+
+QLineEdit:hover {
+    background: rgb(35, 35, 35);
+}
+
+QLineEdit:focus {
+    background: rgb(25, 25, 25);
+}
+
+/* ==================== separator ====================*/
+QPushButton {
+    background: rgb(30, 30, 30);
+    color: white;
+    border: 1px solid rgb(55, 55, 55);
+    border-radius: 8px;
+}
+
+QPushButton:hover {
+    background: rgb(35, 35, 35);
+}
+
+QPushButton:pressed {
+    background: rgb(25, 25, 25);
+}
+
+QPushButton#downloadbutton {
+    background: rgb(30, 30, 30);
+    color: white;
+    border: 1px solid rgb(55, 55, 55);
+    height: 25px;
+}
+
+QPushButton#downloadbutton:hover {
+    background: rgb(35, 35, 35);
+}
+
+QPushButton#downloadbutton:pressed {
+    background: rgb(25, 25, 25);
+}
+
+/* ==================== separator ====================*/
+
+QLabel {
+    color: white;
+}
+
+/* ==================== separator ====================*/
+
+QScrollArea#scrollable {
+    padding: 5 0 5 0;
+    border: none;
+}
+
+QWidget#scrollablewidget {
+    background: rgb(18, 18, 18);
+}
+
+QScrollArea#sidetab {
+    padding: 3 3 3 3;
+    border: none;
+    border-radius: 8px;
+}
+
+QWidget#scrolltabwidget {
+    background: rgb(45, 45, 45);
+}
+
+/* ==================== separator ====================*/
+
+QProgressBar {
+    border: 1px solid rgb(55, 55, 55);
+    background: rgb(40, 40, 40);
+    max-height: 8px;
+}
+
+QProgressBar::chunk {
+    background: rgb(29, 162, 248);
+}
+
+/* ==================== separator ====================*/
+
+QScrollBar:vertical {
+    background: transparent;
+    border: 0px solid #666666;
+    width: 15px;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: -2px;
+    padding-right: -2px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgb(77, 77, 77);
+    min-height: 50px;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgb(99, 99, 99);
+    min-height: 50px;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical {
+    background: transparent;
+}
+
+QScrollBar::sub-page:vertical {
+    background: transparent;
+}

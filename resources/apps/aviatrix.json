@@ -1,0 +1,8 @@
+{
+  "name": "Aviatrix",
+  "id": "aviatrix",
+  "description": "The Aviatrix VPN solution is the only VPN solution that provides SAML authentication from the client itself.",
+  "category": ["utility", "security"],
+  "icon": "resources/icons/aviatrix.png",
+  "bashcmd": "pkexec /usr/bin/chef-client -o recipe[app-aviatrix] -L /var/log/chef/self_portal.log"
+}

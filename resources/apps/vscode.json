@@ -1,0 +1,8 @@
+{
+  "name": "VS Code",
+  "id": "vscode",
+  "description": "Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.",
+  "category": ["programming", "utility"],
+  "icon": "resources/icons/vscode.png",
+  "bashcmd": "pkexec chef-client -o recipe[app-vscode] -L /var/log/chef/self_portal.log"
+}

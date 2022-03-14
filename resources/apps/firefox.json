@@ -1,0 +1,8 @@
+{
+  "name": "Firefox",
+  "id": "firefox",
+  "description": "Firefox, a free web browser backed by Mozilla, a non-profit dedicated to internet health and privacy.",
+  "category": ["browser"],
+  "icon": "resources/icons/firefox.png",
+  "bashcmd": "pkexec /usr/bin/chef-client -o recipe[app-firefox] -L /var/log/chef/self_portal.log"
+}

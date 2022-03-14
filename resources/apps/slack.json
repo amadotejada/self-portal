@@ -1,0 +1,8 @@
+{
+  "name": "Slack",
+  "id": "slack",
+  "description": "Slack is a business communication platform developed by American software company Slack Technologies.",
+  "category": ["communications"],
+  "icon": "resources/icons/slack.svg",
+  "bashcmd": "pkexec /usr/bin/chef-client -o recipe[app-slack] -L /var/log/chef/self_portal.log"
+}

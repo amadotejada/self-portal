@@ -1,0 +1,8 @@
+{
+  "name": "Brave",
+  "id": "brave",
+  "description": "Brave is a free and open-source web browser developed by Brave Software, Inc. based on the Chromium web browser.",
+  "category": ["browser"],
+  "icon": "resources/icons/brave.png",
+  "bashcmd": "pkexec /usr/bin/chef-client -o recipe[app-brave] -L /var/log/chef/self_portal.log"
+}

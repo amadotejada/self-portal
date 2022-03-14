@@ -1,0 +1,8 @@
+{
+  "name": "GlobalProtect",
+  "id": "globalprotect",
+  "description": "GlobalProtect is more than a VPN. It extends consistent security from Prisma Access.",
+  "category": ["utility", "security"],
+  "icon": "resources/icons/gp.png",
+  "bashcmd": "pkexec /usr/bin/chef-client -o recipe[app-globalprotect] -L /var/log/chef/self_portal.log"
+}
