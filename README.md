@@ -45,7 +45,7 @@ Self Portal behaves as a front-end to users that want to install apps hosted by 
 * [PyQt5](https://pypi.org/project/PyQt5/) - Runtime files are bundled in executable for simple deployment.
 * Endpoints need to be enrolled to the Chef instance.
 * Create JSON file for each cookbook/app to deploy - see below.
-* Self Portal needs ability to run `chef-client` as root.
+* Self Portal needs to run with an admin account and the ability to run `chef-client` with elevated permissions.
   - Depending on your security posture and requirements.
   - There are several ways of doing this per OS. e.g. sudoers, [polkit](https://linux.die.net/man/8/polkit), [pkexec](https://linux.die.net/man/1/pkexec), [gsudo](https://github.com/gerardog/gsudo)
 
