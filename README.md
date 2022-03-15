@@ -1,6 +1,6 @@
 # Self Portal
 ##### Written by [Amado Tejada](https://www.linkedin.com/in/amadotejada/)
-Self Portal is a cross-platform desktop application used to deploy software across your endpoints fleet via [Chef](https://github.com/chef/chef) while providing the same user experience across multiple platforms. Self Portal behaves as a front-end to users that want to install apps hosted by Chef.
+Self Portal is a cross-platform desktop application used to deploy software across your endpoints fleet via [Chef](https://github.com/chef/chef) while providing the same user experience across multiple platforms.
 
 Self Portal is in beta. Test throughly before using in production.
 
@@ -23,6 +23,8 @@ Self Portal is in beta. Test throughly before using in production.
 ## How does Self Portal work?
 Self Portal does not connect to Chef directly. After you meet the [requirements](#chef-requirements) and create the JSON file per app like [below](#apps-json-schema) for each app, Self Portal runs `chef-client` with the override parameter to only install that app ad hoc. 
 
+Self Portal behaves as a front-end to users that want to install apps hosted by Chef across multiple Opering Systems.
+
 ## User Interface
 
 ### macOS - Monterey
@@ -44,7 +46,8 @@ Self Portal does not connect to Chef directly. After you meet the [requirements]
 * Endpoints need to be enrolled to the Chef instance.
 * Create JSON file for each cookbook/app to deploy - see below.
 * Self Portal needs ability to run `chef-client` as root.
-  - Depending on your security posture and requirements, there are several ways of doing this per OS. e.g. sudoers, polkit, `pkexec`
+  - Depending on your security posture and requirements.
+  - There are several ways of doing this per OS. e.g. sudoers, [polkit](https://linux.die.net/man/8/polkit), [pkexec](https://linux.die.net/man/1/pkexec), [gsudo](https://github.com/gerardog/gsudo)
 
 ##### Apps JSON schema
 ```json
