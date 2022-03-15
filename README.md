@@ -23,7 +23,7 @@ Self Portal is in beta. Test throughly before using in production.
 ## How does Self Portal work?
 Self Portal does not connect to Chef directly. After you meet the [requirements](#chef-requirements) and create the JSON file per app like [below](#apps-json-schema) for each app, Self Portal runs `chef-client` with the override parameter to only install that app ad hoc. 
 
-Self Portal behaves as a front-end to users that want to install apps hosted by Chef across multiple Opering Systems.
+Self Portal behaves as a front-end to users that want to install apps hosted by Chef across multiple Operating Systems.
 
 ## User Interface
 
