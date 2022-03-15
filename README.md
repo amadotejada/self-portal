@@ -51,7 +51,7 @@ Self Portal is in beta. Test throughly before using in production.
   "description": "Chrome is a fast, secure, free web browser. The browser built by Google.",
   "category": ["browser"],
   "icon": "resources/icons/chrome.png",
-  "bashcmd": "pkexec chef client -o recipe[app-chrome] -L /var/log/chef/self_portal.log"
+  "bashcmd": "pkexec chef-client -o recipe[app-chrome] -L /var/log/chef/self_portal.log"
   \\ Self Portal calls the bashcmd to install the software via Chef.
 }
 ```
