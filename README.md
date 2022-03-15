@@ -1,4 +1,5 @@
 # Self Portal
+##### Written by [Amado Tejada](https://www.linkedin.com/in/amadotejada/)
 Self Portal is a cross-platform desktop application used to deploy software across your endpoints fleet via [Chef](https://github.com/chef/chef) while providing the same user experience across multiple platforms
 
 Self Portal is in beta. Test throughly before using in production.
