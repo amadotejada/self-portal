@@ -1,6 +1,6 @@
 # Self Portal
 ##### Written by [Amado Tejada](https://www.linkedin.com/in/amadotejada/)
-Self Portal is a cross-platform desktop application used to deploy software across your endpoints fleet via [Chef](https://github.com/chef/chef) while providing the same user experience across multiple platforms
+Self Portal is a cross-platform desktop application used to deploy software across your endpoints fleet via [Chef](https://github.com/chef/chef) while providing the same user experience across multiple platforms. Self Portal behaves as a front-end to users that want to install apps hosted by Chef.
 
 Self Portal is in beta. Test throughly before using in production.
 
@@ -20,6 +20,8 @@ Self Portal is in beta. Test throughly before using in production.
 |---------------------|---------------------|---------------------|
 |✅ Monterey|✅ Win 11|✅ Ubuntu|
 
+## How does this work?
+Self Portal does not connect to Chef directly. After you meet the [requirements](#chef-requirements) and create the JSON file per app like [below](#apps-json-schema) for each app, Self Portal runs `chef-client` with the override parameter to only install that app ad hoc. 
 
 ## User Interface
 
@@ -34,6 +36,7 @@ Self Portal is in beta. Test throughly before using in production.
 
 ## Chef Requirements:
 * [Chef](https://github.com/chef/chef) server and cookbooks needs to be pre-configured before using Self Portal.
+* Cookbooks need to exists on Chef and scoped to the endpoints
 * [pyinstaller](https://pypi.org/project/pyinstaller/) to build executables
  
 ## Self Portal Requirements: 
