@@ -3,6 +3,8 @@ Self Portal is a cross-platform desktop application used to deploy software via 
 
 Self Portal is in beta. Test throughly before using in production.
 
+<!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
+
 <!-- [Supports](#supports)
 [User Interface](#user-interface)
 [Chef Requirements](#chef-requirements)
