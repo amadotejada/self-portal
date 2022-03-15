@@ -52,7 +52,7 @@ Self Portal is in beta. Test throughly before using in production.
   "category": ["browser"],
   "icon": "resources/icons/chrome.png",
   "bashcmd": "pkexec chef client -o recipe[app-chrome] -L /var/log/chef/self_portal.log"
-  \\ Self Portal calls the bashcmd to install the software in question
+  \\ Self Portal calls the bashcmd to install the software via Chef.
 }
 ```
 
