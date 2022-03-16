@@ -18,7 +18,7 @@ Self Portal is in beta. Test throughly before using in production.
 
 | macOS               | Windows             | Linux               |
 |---------------------|---------------------|---------------------|
-|✅ Monterey|✅ Win 11|✅ Ubuntu|
+|✅Monterey|✅Win 11|✅Ubuntu|
 
 ## How does Self Portal work?
 Self Portal does not connect to Chef directly. After you meet the [requirements](#chef-requirements) and create the JSON file per app like [below](#apps-json-schema) for each app, Self Portal runs `chef-client` with the override parameter to only install that app ad hoc. 
