@@ -6,14 +6,6 @@ Self Portal is in beta. Test thoroughly before using in production.
 
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
-<!-- [Supports](#supports)
-[User Interface](#user-interface)
-[Chef Requirements](#chef-requirements)
-[Self Portal Requirements](#self-portal-requirements)
-[JSON schema](#apps-json-schema)
-[Build executables](#build-executables)
-[Disclaimers](#disclaimer) -->
-
 #### Supports
 
 | macOS               | Windows             | Linux               |
@@ -38,7 +30,7 @@ Self Portal behaves as a front-end to users that want to install apps hosted by 
 
 ## Chef Requirements:
 * [Chef](https://github.com/chef/chef) server and cookbooks needs to be pre-configured before using Self Portal.
-* Cookbooks need to exists on Chef and scoped to the endpoints
+* Cookbooks need to exist on Chef and scoped to the endpoints
 * [pyinstaller](https://pypi.org/project/pyinstaller/) to build executables
  
 ## Self Portal Requirements: 
@@ -74,7 +66,7 @@ Executables output to ```/self-portal/dist/```
 
 This software {Self Portal} has not been endorsed or supported by [Chef](https://github.com/chef) (Progress Software Corporation) and is in no way associated with Progress Software Corporation and/or its subsidiaries or affiliate. 
 
-#### Licence
+#### License
 
-Self Portal is released under the [Apache 2.0 Licence](https://github.com/amadotejada/self-portal/blob/main/LICENSE).
+Self Portal is released under the [Apache 2.0 License](https://github.com/amadotejada/self-portal/blob/main/LICENSE).
 ####
