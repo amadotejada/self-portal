@@ -1,4 +1,16 @@
-from shutil import which
+# Copyright 2021 Amado Tejada
+#
+# Licensed under the Apache License, Version 2.0 (the 'License');
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an 'AS IS' BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 from PyQt5.QtGui import QIcon, QFont
 from .sidetab import SideTab
@@ -6,10 +18,15 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt, QSize, pyqtSignal, QObject
 import os
 
+
+dir_path = os.path.dirname(os.path.abspath(__file__))
+
+
 class Menu(QtWidgets.QMenu):
     def __init__(self, p=None):
         super(Menu, self).__init__()
         self.setParent(p)
+
 
 class SideFrame(QtWidgets.QFrame):
     def __init__(self, p=None):
@@ -18,22 +35,19 @@ class SideFrame(QtWidgets.QFrame):
         self.vlay = QtWidgets.QVBoxLayout(self)
         self.setObjectName("sidesection")
 
-        self.apptitle = QtWidgets.QLabel("Company Name", self)
+        self.apptitle = QtWidgets.QLabel("Self Portal", self)
         self.apptitle.setObjectName("apptitle")
         self.appdesc = QtWidgets.QTextBrowser(self)
-        self.appdesc.setText("Self Portal \U0001F37D")
+        self.appdesc.setText("Welcome!\n\n")
         self.appdesc.setAlignment(Qt.AlignCenter)
         self.appdesc.setObjectName("appdesc")
-        self.appdesc.setMaximumHeight(120)
+        self.appdesc.setMaximumHeight(100)
         self.tab = SideTab(self)
-
-        self.tabnames = ["All", "Onboarding", "Browser", "Design", "Security", "Programming", "Utility", "Communications"]
-        self.tab.addTabs(self.tabnames)
 
         self.moremenu = Menu(self)
         self.moremenu.setObjectName("moremenu")
         self.moremenu.setWindowFlags(Qt.FramelessWindowHint | Qt.Popup | Qt.NoDropShadowWindowHint)
-        self.moremenu.setFont(QFont("Arial"))
+        self.moremenu.setFont(QFont("Roboto"))
         self.moremenu.setAttribute(Qt.WA_TranslucentBackground)
 
         self.morebutton = QtWidgets.QPushButton(self)
@@ -63,14 +77,15 @@ class AppWidget(QtWidgets.QPushButton):
         self.vlay = QtWidgets.QVBoxLayout(self)
         self.signal = Signal()
         self.setMouseTracking(True)
+
         self.category = category
         self.description = description
         self.bashcmd = bashcmd
         self.name = name
 
         self.appicon = AppIcon(self)
-        self.appicon.setIcon(QIcon(icon))
-        self.appicon.setIconSize(QSize(40, 40))
+        self.appicon.setIcon(QIcon(f"{dir_path}/{icon}".replace("ui", "")))
+        self.appicon.setIconSize(QSize(35, 35))
 
         self.apptitle = QtWidgets.QLabel(name, self)
         self.apptitle.setObjectName("apptitlewidget")
@@ -78,12 +93,8 @@ class AppWidget(QtWidgets.QPushButton):
         self.downloadbutton = QtWidgets.QPushButton("Install", self)
         self.downloadbutton.setObjectName("downloadbutton")
 
-        if which('chef-client'):
-            self.statuslabel = QtWidgets.QLabel("Installing...", self)
-            self.statuslabel.hide()
-        else:
-            self.statuslabel = QtWidgets.QLabel("Chef not installed", self)
-            self.statuslabel.hide()
+        self.statuslabel = QtWidgets.QLabel("Installing", self)
+        self.statuslabel.hide()
 
         self.vlay.addWidget(self.appicon, alignment=Qt.AlignVCenter)
         self.vlay.addWidget(self.apptitle, alignment=Qt.AlignCenter)
