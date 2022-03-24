@@ -18,7 +18,7 @@ Self Portal is in beta and should be tested extensively
 
 #### Supports
 Tested Self Portal with the toosl below:
-| <p><i class="fa fa-apple"></i> macOS</p> | <p><i class="fa fa-windows"></i> Windows</p> | <p><i class="fa fa-linux"></i> Linux</p>               |
+| macOS | Windows | Linux |
 |:---------------------:|:---------------------:|:---------------------:|
 | [Chef](https://github.com/chef/chef) | [Chef](https://github.com/chef/chef) | [Chef](https://github.com/chef/chef) |
 | [Jamf](https://docs.jamf.com/technical-articles/Manually_Initiating_a_Policy.html) | [Choco](https://github.com/chocolatey/choco) | [apt](https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html)/[yum](https://man7.org/linux/man-pages/man8/yum.8.html)/[dnf](https://man7.org/linux/man-pages/man5/dnf.conf.5.html)     |
@@ -33,7 +33,7 @@ Tested Self Portal with the toosl below:
 
 | Theme Chooser  | Log Viewer |
 |:-----:|:-----:|
-| <img src="./screenshots/themes.png" width="75%">   | <img src="./screenshots/logviewer.png" width="75%">   |
+| <img src="./screenshots/themes.png" width="100%">   | <img src="./screenshots/logviewer.png" width="100%">   |
 
 
 #### macOS
