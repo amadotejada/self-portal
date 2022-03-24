@@ -10,7 +10,7 @@ This is a front-end for users to install applications. Self Portal does not conn
 
 #### Features
 * cross-platform
-* supports various software deployment tools
+* supports various deployment tools
 * python framework bundled
 * no end-user runtime dependencies
 * dark & light themes
@@ -26,8 +26,7 @@ Tested Self Portal with the toosl below:
 | [autopkg](https://github.com/autopkg/autopkg) | [Scoop](https://github.com/ScoopInstaller/Scoop) | [snap](http://manpages.ubuntu.com/manpages/bionic/man1/snap.1.html)/[flatpak](https://docs.flatpak.org/en/latest/using-flatpak.html) |
 
 * Last tested: 04/21/22
-* Chef is the only tool with extensive testing
-* Other tools were tested installing Chrome & Firefox
+* Chef only tool with extensive testing
 * Testing compatibility with [Gorilla](https://github.com/1dustindavis/gorilla), [Munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [Homebrew](https://github.com/Homebrew)
 
 ## User Interface
@@ -37,22 +36,22 @@ Tested Self Portal with the toosl below:
 | <img src="./screenshots/themes.png" width="75%">   | <img src="./screenshots/logviewer.png" width="75%">   |
 
 
-#### <p><i class="fa fa-apple"></i> macOS</p>
+#### macOS
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/mac_dark.png" width="75%">   | <img src="./screenshots/mac_light.png" width="75%">   |
 <!-- <img src="/screenshots/mac_dark.png"> -->
 
-#### <p><i class="fa fa-windows"></i> Windows</p>
+#### Windows
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/win_dark.png" width="75%">   | <img src="./screenshots/win_dark.png" width="75%">   |
 <!-- <img src="/screenshots/win_dark.png"> -->
 
-#### <p><i class="fa fa-linux"></i> Linux</p>
+#### Linux
 | Dark  | Light |
 |:-----:|:-----:|
-| <img src="./screenshots/linux_dark.png" width="75%">   | <img src="./screenshots/linux_light.png" width="75%">   |
+| <img src="./screenshots/linux_dark.png" width="100%">   | <img src="./screenshots/linux_light.png" width="100%">   |
 <!-- <img src="/screenshots/linux_dark.png"> -->
 
 
