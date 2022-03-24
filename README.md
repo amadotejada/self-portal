@@ -2,9 +2,9 @@
 ##### Written by [Amado Tejada](https://www.linkedin.com/in/amadotejada/)
 Self Portal is a **cross-platform** desktop application used to deploy software across your endpoints fleet while providing the same user experience across multiple software management solutions.
 
-This is a front-end for users to install applications. Self Portal does not connect the software management tools. Instead, it calls out to the software management tool to install the packages.
+This is only a front-end for users and does not connect directly the software management tools Instead, it calls out to the software management tool to install the packages.
 
-*Self Portal is in beta*
+Self Portal is in beta and should be tested extensively
 
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
@@ -39,25 +39,20 @@ Tested Self Portal with the toosl below:
 #### macOS
 | Dark  | Light |
 |:-----:|:-----:|
-| <img src="./screenshots/mac_dark.png" width="75%">   | <img src="./screenshots/mac_light.png" width="75%">   |
-<!-- <img src="/screenshots/mac_dark.png"> -->
+| <img src="./screenshots/mac_dark.png" width="100%">   | <img src="./screenshots/mac_light.png" width="100%">   |
 
 #### Windows
 | Dark  | Light |
 |:-----:|:-----:|
-| <img src="./screenshots/win_dark.png" width="75%">   | <img src="./screenshots/win_dark.png" width="75%">   |
-<!-- <img src="/screenshots/win_dark.png"> -->
+| <img src="./screenshots/win_dark.png" width="100%">   | <img src="./screenshots/win_dark.png" width="100%">   |
 
 #### Linux
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/linux_dark.png" width="100%">   | <img src="./screenshots/linux_light.png" width="100%">   |
-<!-- <img src="/screenshots/linux_dark.png"> -->
-
 
 ## Getting Started
 [Wiki - work in progress](https://github.com/amadotejada/self-portal/wiki)
-
 
 ##
 #### Disclaimer
