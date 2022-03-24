@@ -4,5 +4,7 @@
   "description": "IntelliJ IDEA is an integrated development environment written in Java for developing computer software.",
   "category": ["programming", "utility"],
   "icon": "resources/icons/intellj.png",
-  "bashcmd": "pkexec chef-client -o recipe[app-intellj] -L /var/log/chef/self_portal.log"
+  "bashcmd": "echo 'testing cmd' && sleep 5"
 }
+
+
