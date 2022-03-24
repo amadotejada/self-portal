@@ -1,9 +1,14 @@
 QFrame#sidesection {
-    background: rgb(45, 45, 45);
+    background: #FBFAFF;
+}
+
+QLabel#header-label {
+    color: white;
+    font-size: 24px;
 }
 
 QMessageBox {
-    background: rgb(45, 45, 45);
+    background: #F0F1F6;
 }
 
 QMessageBox QPushButton{
@@ -12,24 +17,39 @@ QMessageBox QPushButton{
 }
 
 QWidget#window {
-    background: rgb(18, 18, 18);
+    background: #F0F1F6;
+}
+
+QDialog {
+    background: #F0F1F6;
+}
+
+QTextBrowser {
+    background: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 8px;
+    padding-right: 4px;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 QLabel#apptitle {
     font-size: 25px;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 QLabel#apptitlewidget {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 QTextBrowser#appdesc {
-    background: rgb(45, 45, 45);
+    background: transparent;
     border: none;
-    color: white;
-    font-size: 16px;
+    color: black;
+    font-size: 13px;
 }
 
 QToolTip {
@@ -42,20 +62,20 @@ QToolTip {
 /* ==================== separator ====================*/
 
 QPushButton#morebutton {
-    background: rgb(30, 30, 30);
-    color: white;
-    border: 1px solid rgb(55, 55, 55);
+    background: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid rgb(200, 200, 200);
     border-radius: 8px;
     min-width: 100px;
     min-height: 25px;
 }
 
 QPushButton#morebutton:hover {
-    background: rgb(35, 35, 35);
+    background: rgb(245, 245, 245);
 }
 
 QPushButton#morebutton:pressed {
-    background: rgb(25, 25, 25);
+    background: rgb(200, 200, 200);
 }
 
 QPushButton#morebutton::menu-indicator {
@@ -64,9 +84,9 @@ QPushButton#morebutton::menu-indicator {
 
 QMenu#moremenu {
     padding: 3 3 3 3;
-    background: rgb(30, 30, 30);
-    color: white;
-    border: 1px solid rgb(55, 55, 55);
+    background: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid rgb(200, 200, 200);
     border-radius: 8px;
 }
 
@@ -77,63 +97,66 @@ QMenu#moremenu::item {
 
 QMenu#moremenu::item:selected {
     padding: 5 5 5 5;
-    background: rgb(45, 45, 45);
+    background: #2E7CEE;
     border-radius: 8px;
+    color: white;
 }
 
 /* ==================== separator ====================*/
+
 QLineEdit {
     padding: 5 5 5 5;
-    background: rgb(30, 30, 30);
-    color: white;
-    /*border: 1px solid rgb(128, 128, 128);*/
-    border: 1px solid rgb(225, 48, 38);
+    background: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid rgb(128, 128, 128);
     border-radius: 4px;
 }
 
-QLineEdit:hover {
-    background: rgb(35, 35, 35);
-}
-
 QLineEdit:focus {
-    background: rgb(25, 25, 25);
+    background: rgb(245, 245, 245);
+    border: 1px solid #2E7CEE;
 }
 
 /* ==================== separator ====================*/
+
 QPushButton {
-    background: rgb(30, 30, 30);
-    color: white;
-    border: 1px solid rgb(55, 55, 55);
+    background: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid rgb(200, 200, 200);
     border-radius: 8px;
 }
 
+QPushButton:focus {
+    border: 2px solid #2E7CEE;
+}
+
 QPushButton:hover {
-    background: rgb(35, 35, 35);
+    background: rgb(245, 245, 245);
 }
 
 QPushButton:pressed {
-    background: rgb(25, 25, 25);
+    background: rgb(200, 200, 200);
 }
 
 QPushButton#downloadbutton {
-    background: rgb(30, 30, 30);
+    background: #2E7CEE;
     color: white;
-    border: 1px solid rgb(55, 55, 55);
+    border: 1px solid #2E7CEE;
     height: 25px;
 }
 
 QPushButton#downloadbutton:hover {
-    background: rgb(35, 35, 35);
+    background: #3183FF;
 }
 
 QPushButton#downloadbutton:pressed {
-    background: rgb(25, 25, 25);
+    background: #2667C7;
 }
 
 /* ==================== separator ====================*/
 
 QLabel {
-    color: white;
+    color: black;
 }
 
 /* ==================== separator ====================*/
@@ -144,7 +167,7 @@ QScrollArea#scrollable {
 }
 
 QWidget#scrollablewidget {
-    background: rgb(18, 18, 18);
+    background: #F0F1F6;
 }
 
 QScrollArea#sidetab {
@@ -154,7 +177,7 @@ QScrollArea#sidetab {
 }
 
 QWidget#scrolltabwidget {
-    background: rgb(45, 45, 45);
+    background: #FBFAFF;
 }
 
 /* ==================== separator ====================*/
