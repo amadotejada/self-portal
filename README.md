@@ -1,72 +1,71 @@
 # Self Portal
 ##### Written by [Amado Tejada](https://www.linkedin.com/in/amadotejada/)
-Self Portal is a cross-platform desktop application used to deploy software across your endpoints fleet via [Chef](https://github.com/chef/chef) while providing the same user experience across multiple platforms.
+Self Portal is a **cross-platform** desktop application used to deploy software across your endpoints fleet while providing the same user experience across multiple software management solutions.
 
-Self Portal is in beta. Test thoroughly before using in production.
+This is a front-end for users to install applications. Self Portal does not connect the software management tools. Instead, it calls out to the software management tool to install the packages.
+
+*Self Portal is in beta*
 
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
+#### Features
+* cross-platform
+* supports various software deployment tools
+* python framework bundled
+* no end-user runtime dependencies
+* dark & light themes
+* log viewer
+
 #### Supports
+Tested Self Portal with the toosl below:
+| <p><i class="fa fa-apple"></i> macOS</p> | <p><i class="fa fa-windows"></i> Windows</p> | <p><i class="fa fa-linux"></i> Linux</p>               |
+|:---------------------:|:---------------------:|:---------------------:|
+| [Chef](https://github.com/chef/chef) | [Chef](https://github.com/chef/chef) | [Chef](https://github.com/chef/chef) |
+| [Jamf](https://docs.jamf.com/technical-articles/Manually_Initiating_a_Policy.html) | [Choco](https://github.com/chocolatey/choco) | [apt](https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html)/[yum](https://man7.org/linux/man-pages/man8/yum.8.html)/[dnf](https://man7.org/linux/man-pages/man5/dnf.conf.5.html)     |
+| [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/)
+| [autopkg](https://github.com/autopkg/autopkg) | [Scoop](https://github.com/ScoopInstaller/Scoop) | [snap](http://manpages.ubuntu.com/manpages/bionic/man1/snap.1.html)/[flatpak](https://docs.flatpak.org/en/latest/using-flatpak.html) |
 
-| macOS               | Windows             | Linux               |
-|---------------------|---------------------|---------------------|
-|✅Monterey|✅Win 11|✅Ubuntu|
-
-## How does Self Portal work?
-Self Portal does not connect to Chef directly. After you meet the [requirements](#chef-requirements) and create the JSON file per app like [below](#apps-json-schema) for each app, Self Portal runs `chef-client` with the override parameter to only install that app ad hoc. 
-
-Self Portal behaves as a front-end to users that want to install apps hosted by Chef across multiple Operating Systems.
+* Last tested: 04/21/22
+* Chef is the only tool with extensive testing
+* Other tools were tested installing Chrome & Firefox
+* Testing compatibility with [Gorilla](https://github.com/1dustindavis/gorilla), [Munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [Homebrew](https://github.com/Homebrew)
 
 ## User Interface
 
-### macOS - Monterey
-<img src="/screenshots/mac_dark.png">
+| Theme Chooser  | Log Viewer |
+|:-----:|:-----:|
+| <img src="./screenshots/themes.png" width="75%">   | <img src="./screenshots/logviewer.png" width="75%">   |
 
-### Windows 11
-<img src="/screenshots/win_dark.png">
 
-### Linux - Ubuntu
-<img src="/screenshots/linux_dark.png">
+#### <p><i class="fa fa-apple"></i> macOS</p>
+| Dark  | Light |
+|:-----:|:-----:|
+| <img src="./screenshots/mac_dark.png" width="75%">   | <img src="./screenshots/mac_light.png" width="75%">   |
+<!-- <img src="/screenshots/mac_dark.png"> -->
 
-## Chef Requirements:
-* [Chef](https://github.com/chef/chef) server and cookbooks needs to be pre-configured before using Self Portal.
-* Cookbooks need to exist on Chef and scoped to the endpoints
-* [pyinstaller](https://pypi.org/project/pyinstaller/) to build executables
- 
-## Self Portal Requirements: 
-* [PyQt5](https://pypi.org/project/PyQt5/) - Runtime files are bundled in executable for simple deployment.
-* Endpoints need to be enrolled to the Chef instance.
-* Create JSON file for each cookbook/app to deploy - see below.
-* Self Portal needs to run with an admin account and the ability to run `chef-client` with elevated permissions.
-  - Depending on your security posture and requirements.
-  - There are several ways of doing this per OS. e.g. sudoers, [polkit](https://linux.die.net/man/8/polkit), [pkexec](https://linux.die.net/man/1/pkexec), [gsudo](https://github.com/gerardog/gsudo)
+#### <p><i class="fa fa-windows"></i> Windows</p>
+| Dark  | Light |
+|:-----:|:-----:|
+| <img src="./screenshots/win_dark.png" width="75%">   | <img src="./screenshots/win_dark.png" width="75%">   |
+<!-- <img src="/screenshots/win_dark.png"> -->
 
-##### Apps JSON schema
-```json
-{
-  "name": "Chrome",
-  "id": "chrome",
-  "description": "Chrome is a fast, secure, free web browser. The browser built by Google.",
-  "category": ["browser"],
-  "icon": "resources/icons/chrome.png",
-  "bashcmd": "pkexec chef-client -o recipe[app-chrome] -L /var/log/chef/self_portal.log"
-  \\ Self Portal calls the bashcmd to install the software via Chef.
-}
-```
+#### <p><i class="fa fa-linux"></i> Linux</p>
+| Dark  | Light |
+|:-----:|:-----:|
+| <img src="./screenshots/linux_dark.png" width="75%">   | <img src="./screenshots/linux_light.png" width="75%">   |
+<!-- <img src="/screenshots/linux_dark.png"> -->
 
-## Build executables
-- It's best to build on the targeted OS
-```cmd
-pyinstaller build.spec
-```
-Executables output to ```/self-portal/dist/```
 
-#
+## Getting Started
+[Wiki - work in progress](https://github.com/amadotejada/self-portal/wiki)
+
+
+##
 #### Disclaimer
 
-This software {Self Portal} has not been endorsed or supported by [Chef](https://github.com/chef) (Progress Software Corporation) and is in no way associated with Progress Software Corporation and/or its subsidiaries or affiliate. 
+This software {Self Portal} has not been endorsed or supported by any of the software mentioned [above](#supports) and is in no way associated with them and/or its subsidiaries or affiliate.
 
 #### License
 
-Self Portal is released under the [Apache 2.0 License](https://github.com/amadotejada/self-portal/blob/main/LICENSE).
+Self Portal is released under the [Apache 2.0 License](https://github.com/amadotejada/self-portal/blob/main/LICENSE)
 ####
