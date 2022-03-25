@@ -162,7 +162,7 @@ QLabel {
 /* ==================== separator ====================*/
 
 QScrollArea#scrollable {
-    padding: 5 0 5 0;
+    padding: 5 0 5 5;
     border: none;
 }
 
