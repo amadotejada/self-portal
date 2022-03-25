@@ -31,8 +31,7 @@ Tested Self Portal with the toosl below:
 
 ## User Interface
 UI Demo
-![UI Demo](src="./screenshots/uidemo.gif")
-
+![UI Demo](./screenshots/uidemo.gif)
 
 | Theme Chooser  | Log Viewer |
 |:-----:|:-----:|
