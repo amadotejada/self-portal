@@ -38,7 +38,7 @@ Self Portal is in beta and should be tested extensively.
 <details>
 <summary>Preview UI Demo</summary>
 
-![UI Demo](./screenshots/uidemo.gif)
+![UI Demo](./screenshots/startdemo.gif)
 </details>
 
 ### macOS
