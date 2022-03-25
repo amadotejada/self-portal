@@ -8,7 +8,7 @@ Self Portal is in beta and should be tested extensively
 
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
-#### Features
+### Features
 * cross-platform
 * supports various deployment tools
 * python framework bundled
@@ -16,7 +16,7 @@ Self Portal is in beta and should be tested extensively
 * dark & light themes
 * log viewer
 
-#### Supports
+### Supports
 Tested Self Portal with the toosl below:
 | macOS | Windows | Linux |
 |:---------------------:|:---------------------:|:---------------------:|
@@ -37,25 +37,25 @@ Tested Self Portal with the toosl below:
 ![UI Demo](./screenshots/uidemo.gif)
 </details>
 
-#### macOS
+### macOS
 
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/mac_dark.png" width="100%">   | <img src="./screenshots/mac_light.png" width="100%">   |
 
-#### Windows
+### Windows
 
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/win_dark.png" width="100%">   | <img src="./screenshots/win_dark.png" width="100%">   |
 
-#### Linux
+### Linux
 
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/linux_dark.png" width="100%">   | <img src="./screenshots/linux_light.png" width="100%">   |
 
-#### Other
+### Other
 
 | Theme Chooser  | Log Viewer |
 |:-----:|:-----:|
@@ -65,11 +65,11 @@ Tested Self Portal with the toosl below:
 [Wiki - work in progress](https://github.com/amadotejada/self-portal/wiki)
 
 ##
-#### Disclaimer
+### Disclaimer
 
 This software {Self Portal} has not been endorsed or supported by any of the software mentioned [above](#supports) and is in no way associated with them and/or its subsidiaries or affiliate.
 
-#### License
+### License
 
 Self Portal is released under the [Apache 2.0 License](https://github.com/amadotejada/self-portal/blob/main/LICENSE)
 ####
