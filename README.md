@@ -27,7 +27,7 @@ Tested Self Portal with the toosl below:
 
 * Last tested: 04/21/22
 * Chef only tool with extensive testing
-* Testing with [Gorilla](https://github.com/1dustindavis/gorilla), [Munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [Homebrew](https://github.com/Homebrew)
+* Testing [gorilla](https://github.com/1dustindavis/gorilla), [munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [brew](https://github.com/Homebrew)
 
 ## User Interface
 UI Demo
