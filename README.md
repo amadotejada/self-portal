@@ -31,27 +31,32 @@ Tested Self Portal with the toosl below:
 
 ## User Interface
 UI Demo
+
 ![UI Demo](./screenshots/uidemo.gif)
 
-| Theme Chooser  | Log Viewer |
-|:-----:|:-----:|
-| <img src="./screenshots/themes.png" width="100%">   | <img src="./screenshots/logviewer.png" width="100%">   |
-
-
 #### macOS
+
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/mac_dark.png" width="100%">   | <img src="./screenshots/mac_light.png" width="100%">   |
 
 #### Windows
+
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/win_dark.png" width="100%">   | <img src="./screenshots/win_dark.png" width="100%">   |
 
 #### Linux
+
 | Dark  | Light |
 |:-----:|:-----:|
 | <img src="./screenshots/linux_dark.png" width="100%">   | <img src="./screenshots/linux_light.png" width="100%">   |
+
+#### Other
+
+| Theme Chooser  | Log Viewer |
+|:-----:|:-----:|
+| <img src="./screenshots/themes.png" width="100%">   | <img src="./screenshots/logviewer.png" width="100%">   |
 
 ## Getting Started
 [Wiki - work in progress](https://github.com/amadotejada/self-portal/wiki)
