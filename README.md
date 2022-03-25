@@ -32,7 +32,7 @@ Tested Self Portal with the toosl below:
 ## User Interface
 
 <details>
-<summary>UI Demo</summary>
+<summary>Preview UI Demo</summary>
 
 ![UI Demo](./screenshots/uidemo.gif)
 </details>
