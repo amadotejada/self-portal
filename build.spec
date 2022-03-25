@@ -7,7 +7,7 @@ block_cipher = None
 a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
-             datas=[('resources', 'resources')],
+             datas=[('resources', 'resources'), ('conf', 'conf')],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},
@@ -35,21 +35,38 @@ exe = EXE(pyz,
           codesign_identity=None,
           entitlements_file=None )
 
-coll = COLLECT(exe,
+darwin = COLLECT(exe,
                a.binaries,
                a.zipfiles,
                a.datas, 
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='main')
+               name='main' )
 
 # Build a .app if on OS X
 if sys.platform == 'darwin':
-    app = BUNDLE(coll,
-                name='Self Portal.app',
-                icon='appicon.ico',
-                bundle_identifier=None)
+    app = BUNDLE(darwin,
+            name='Self Portal.app',
+            icon='appicon.ico',
+            bundle_identifier=None,
+            version='0.7.0',
+            info_plist={
+                'NSPrincipalClass': 'NSApplication',
+                'NSAppleScriptEnabled': False,
+                'NSHumanReadableCopyright': '2021 Amado Tejada',
+                'NSHighResolutionCapable': 'True',
+                'CFBundleDocumentTypes': [
+                    {
+                        'CFBundleTypeName': 'app',
+                        'CFBundleTypeIconFile': 'appicon.ico',
+                        'LSItemContentTypes': ['com.amadotejada.selfportal'],
+                        'LSHandlerRank': 'Owner',
+                        'CFBundleTypeRole': 'None'
+                        }
+                    ]
+                },
+            )
 
 exe = EXE(pyz,
           a.scripts,
@@ -69,4 +86,4 @@ exe = EXE(pyz,
           target_arch=None,
           icon='appicon.ico',
           codesign_identity=None,
-          entitlements_file=None )
+          entitlements_file=None)
