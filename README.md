@@ -30,6 +30,9 @@ Tested Self Portal with the toosl below:
 * Testing compatibility with [Gorilla](https://github.com/1dustindavis/gorilla), [Munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [Homebrew](https://github.com/Homebrew)
 
 ## User Interface
+UI Demo
+![UI Demo](src="./screenshots/uidemo.gif")
+
 
 | Theme Chooser  | Log Viewer |
 |:-----:|:-----:|
