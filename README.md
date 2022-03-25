@@ -4,7 +4,7 @@ Self Portal is a **cross-platform** desktop application used to deploy software 
 
 <img src="./screenshots/mac_dark.png" width="100%">
 
-This is only a front-end for users and does not connect directly the software management tools Instead, it calls out to the software management tool to install the packages.
+This is a front-end for users and does not connect directly with software management tools. Instead, it calls out to the software management tools [below](#supports) to install the packages.
 
 Self Portal is in beta and should be tested extensively
 
