@@ -30,10 +30,9 @@ Tested Self Portal with the toosl below:
 * Testing [gorilla](https://github.com/1dustindavis/gorilla), [munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [brew](https://github.com/Homebrew)
 
 ## User Interface
-UI Demo
+[UI Demo](./screenshots/uidemo.gif)
 
 ![UI Demo](./screenshots/uidemo.gif)
-
 #### macOS
 
 | Dark  | Light |
