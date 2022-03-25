@@ -1,4 +1,5 @@
 # Self Portal
+
 ##### Written by [Amado Tejada](https://www.linkedin.com/in/amadotejada/)
 Self Portal is a **cross-platform** desktop application used to deploy software across your endpoints fleet while providing the same user experience across multiple software management solutions.
 
@@ -6,11 +7,12 @@ Self Portal is a **cross-platform** desktop application used to deploy software 
 
 This is a front-end for users and does not connect directly with software management tools. Instead, it calls out to the software management tools [below](#supports) to install the packages.
 
-Self Portal is in beta and should be tested extensively
+Self Portal is in beta and should be tested extensively.
 
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
 ### Features
+
 * cross-platform
 * supports various deployment tools
 * python framework bundled
@@ -19,7 +21,7 @@ Self Portal is in beta and should be tested extensively
 * log viewer
 
 ### Supports
-Tested Self Portal with the toosl below:
+
 | macOS | Windows | Linux |
 |:---------------------:|:---------------------:|:---------------------:|
 | [Chef](https://github.com/chef/chef) | [Chef](https://github.com/chef/chef) | [Chef](https://github.com/chef/chef) |
@@ -27,9 +29,9 @@ Tested Self Portal with the toosl below:
 | [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/)
 | [autopkg](https://github.com/autopkg/autopkg) | [Scoop](https://github.com/ScoopInstaller/Scoop) | [snap](http://manpages.ubuntu.com/manpages/bionic/man1/snap.1.html)/[flatpak](https://docs.flatpak.org/en/latest/using-flatpak.html) |
 
-* Last tested: 04/21/22
-* Chef only tool with extensive testing
-* Testing [gorilla](https://github.com/1dustindavis/gorilla), [munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [brew](https://github.com/Homebrew)
+* last tested: 04/21/22
+* chef only tool with extensive testing
+* testing [gorilla](https://github.com/1dustindavis/gorilla), [munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [brew](https://github.com/Homebrew)
 
 ## User Interface
 
@@ -64,6 +66,7 @@ Tested Self Portal with the toosl below:
 | <img src="./screenshots/themes.png" width="100%">   | <img src="./screenshots/logviewer.png" width="100%">   |
 
 ## Getting Started
+
 [Wiki - work in progress](https://github.com/amadotejada/self-portal/wiki)
 
 ##
