@@ -12,8 +12,6 @@ This is a front-end for users and does not connect directly with software manage
 
 Self Portal is in beta and should be tested extensively. 
 
-[![build](https://github.com/amadotejada/self-portal/actions/workflows/python.yml/badge.svg)](https://github.com/amadotejada/self-portal/actions/workflows/python.yml)
-
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
 ### Features
