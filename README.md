@@ -1,13 +1,18 @@
 # Self Portal
 
 ##### Written by [Amado Tejada](https://www.linkedin.com/in/amadotejada/)
+
+[![build](https://github.com/amadotejada/self-portal/actions/workflows/python.yml/badge.svg)](https://github.com/amadotejada/self-portal/actions/workflows/python.yml)
+
 Self Portal is a **cross-platform** desktop application used to deploy software across your endpoints fleet while providing the same user experience across multiple software management solutions.
 
 <img src="./screenshots/main.png" width="100%">
 
 This is a front-end for users and does not connect directly with software management tools. Instead, it calls out to the software management tools [below](#supports) to install the packages.
 
-Self Portal is in beta and should be tested extensively.
+Self Portal is in beta and should be tested extensively. 
+
+[![build](https://github.com/amadotejada/self-portal/actions/workflows/python.yml/badge.svg)](https://github.com/amadotejada/self-portal/actions/workflows/python.yml)
 
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
