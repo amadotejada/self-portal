@@ -35,6 +35,7 @@ from ui.widgets import AppWidget, SideFrame
 
 dir_path = os.path.dirname(os.path.abspath(__file__))
 
+
 class Signal(TaskSignals):
     installCompleted = pyqtSignal()
     installFailed = pyqtSignal()
@@ -58,7 +59,8 @@ class BashInstall(Task):
             with open(f"{dir_path}/conf/conf.json", "r+") as cfile:
                 conf = json.load(cfile)
                 if which(conf["client"]):
-                    process = subprocess.Popen(self.bashcmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+                    process = subprocess.Popen(
+                        self.bashcmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
 
                     def check_io():
                         while True:
@@ -115,8 +117,10 @@ class MainPage(QFrame):
         for jsonfile in glob.glob(f"{dir_path}/resources/apps/*json"):
             with open(jsonfile, encoding="utf-8") as file:
                 data = json.load(file)
-            appwidget = AppWidget(self, data["icon"], data["name"], data["category"], data["description"],
-                                  data["bashcmd"])
+
+            appwidget = AppWidget(
+                self, data["icon"], data["name"], data["category"], data["description"], data["bashcmd"])
+
             self.flay.addApp(appwidget)
             self.apps.append(appwidget)
             appwidget.signal.appdesc.connect(self.parent().sideframe.appdesc.setText)
@@ -166,16 +170,16 @@ class ThemeWizard(QWizardPage):
 
         self.light_image = WizardImageContainer(self)
         self.light_image.onClicked.connect(lambda: self.light_radio.setChecked(True))
-        self.light_image.setPixmap(QPixmap(f"{dir_path}/resources/light.PNG").scaled(int(1047 / 3), int(667 / 3),
-                                                                         Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        self.light_image.setPixmap(QPixmap(f"{dir_path}/resources/light.PNG")
+                                   .scaled(int(1047 / 3), int(667 / 3), Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.light_radio = QRadioButton("Light", self)
         self.light_lay.addWidget(self.light_image)
         self.light_lay.addWidget(self.light_radio, alignment=Qt.AlignCenter)
 
         self.dark_image = WizardImageContainer(self)
         self.dark_image.onClicked.connect(lambda: self.dark_radio.setChecked(True))
-        self.dark_image.setPixmap(QPixmap(f"{dir_path}/resources/dark.PNG").scaled(int(1047 / 3), int(667 / 3), Qt.KeepAspectRatio,
-                                                                       Qt.SmoothTransformation))
+        self.dark_image.setPixmap(QPixmap(f"{dir_path}/resources/dark.PNG")
+                                  .scaled(int(1047 / 3), int(667 / 3), Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.dark_radio = QRadioButton("Dark", self)
         self.dark_lay.addWidget(self.dark_image)
         self.dark_lay.addWidget(self.dark_radio, alignment=Qt.AlignCenter)
@@ -217,7 +221,8 @@ class Header(QFrame):
         s.scale(self.width(), self.height(), Qt.KeepAspectRatioByExpanding)
         r = QRect()
         r.setSize(s)
-        painter.drawPixmap(r, image.scaled(self.width(), self.height(), Qt.KeepAspectRatioByExpanding,
+        painter.drawPixmap(r, image.scaled(self.width(), self.height(),
+                                           Qt.KeepAspectRatioByExpanding,
                                            Qt.SmoothTransformation))
         QFrame.paintEvent(self, a0)
 
