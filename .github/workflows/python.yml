@@ -36,7 +36,7 @@ jobs:
       run: |
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: apt install
-      run: sudo apt install -y libgl1-mesa-glx
+      run: sudo apt install -y libopengl0 -y
     - name: run main.py
       run: timeout 20 python ./main.py || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
     - name: timeout
