@@ -35,8 +35,6 @@ jobs:
     - name: dependencies
       run: |
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: apt opencv
-      run: sudo apt install -y python3-opencv
     - name: run main.py
       run: timeout 20 python ./main.py || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
     - name: timeout
