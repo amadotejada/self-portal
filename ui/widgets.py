@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from PyQt5.QtGui import QIcon, QFont
+from PyQt6.QtGui import QIcon, QFont
 from .sidetab import SideTab
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import Qt, QSize, pyqtSignal, QObject
+from PyQt6 import QtWidgets
+from PyQt6.QtCore import Qt, QSize, pyqtSignal, QObject
 import os
 
 
@@ -39,26 +39,27 @@ class SideFrame(QtWidgets.QFrame):
         self.apptitle.setObjectName("apptitle")
         self.appdesc = QtWidgets.QTextBrowser(self)
         self.appdesc.setText("Welcome!\n\n")
-        self.appdesc.setAlignment(Qt.AlignCenter)
+        self.appdesc.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.appdesc.setObjectName("appdesc")
         self.appdesc.setMaximumHeight(100)
         self.tab = SideTab(self)
 
         self.moremenu = Menu(self)
         self.moremenu.setObjectName("moremenu")
-        self.moremenu.setWindowFlags(Qt.FramelessWindowHint | Qt.Popup | Qt.NoDropShadowWindowHint)
+        self.moremenu.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.Popup |
+                                     Qt.WindowType.NoDropShadowWindowHint)
         self.moremenu.setFont(QFont("Roboto"))
-        self.moremenu.setAttribute(Qt.WA_TranslucentBackground)
+        self.moremenu.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
         self.morebutton = QtWidgets.QPushButton(self)
         self.morebutton.setObjectName("morebutton")
         self.morebutton.setMenu(self.moremenu)
         self.morebutton.setText("Menu")
 
-        self.vlay.addWidget(self.apptitle, alignment=Qt.AlignCenter)
+        self.vlay.addWidget(self.apptitle, alignment=Qt.AlignmentFlag.AlignCenter)
         self.vlay.addWidget(self.appdesc)
         self.vlay.addWidget(self.tab, stretch=5)
-        self.vlay.addWidget(self.morebutton, alignment=Qt.AlignCenter)
+        self.vlay.addWidget(self.morebutton, alignment=Qt.AlignmentFlag.AlignCenter)
 
 
 class AppIcon(QtWidgets.QPushButton):
@@ -66,8 +67,7 @@ class AppIcon(QtWidgets.QPushButton):
         super(AppIcon, self).__init__()
         self.setParent(p)
         self.setStyleSheet("background: transparent; border: none;")
-        self.setAttribute(Qt.WA_TransparentForMouseEvents)
-
+        self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
 
 class AppWidget(QtWidgets.QPushButton):
     def __init__(self, p=None, icon=None, name=None, category=None, description=None, bashcmd=None):
@@ -96,10 +96,10 @@ class AppWidget(QtWidgets.QPushButton):
         self.statuslabel = QtWidgets.QLabel("Installing", self)
         self.statuslabel.hide()
 
-        self.vlay.addWidget(self.appicon, alignment=Qt.AlignVCenter)
-        self.vlay.addWidget(self.apptitle, alignment=Qt.AlignCenter)
+        self.vlay.addWidget(self.appicon, alignment=Qt.AlignmentFlag.AlignVCenter)
+        self.vlay.addWidget(self.apptitle, alignment=Qt.AlignmentFlag.AlignCenter)
         self.vlay.addWidget(self.downloadbutton)
-        self.vlay.addWidget(self.statuslabel, alignment=Qt.AlignCenter)
+        self.vlay.addWidget(self.statuslabel, alignment=Qt.AlignmentFlag.AlignCenter)
 
         self.clicked.connect(lambda: self.signal.appdesc.emit(self.description))
         self.clicked.connect(lambda: self.signal.appname.emit(name))

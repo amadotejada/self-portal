@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from PyQt5 import QtWidgets
-
+from PyQt6 import QtWidgets
 from .flowlayout import FlowLayout
 
 

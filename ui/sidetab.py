@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import QSize, Qt, pyqtSignal
+from PyQt6 import QtWidgets
+from PyQt6.QtCore import QSize, Qt, pyqtSignal
 
 
 class TabButton(QtWidgets.QPushButton):
@@ -41,7 +41,7 @@ class SideTab(QtWidgets.QScrollArea):
     def addTabs(self, tabNames, height=50):
         self.widgetLayout.addStretch()
         self.searchbar.setFixedHeight(35)
-        self.searchbar.setAlignment(Qt.AlignCenter)
+        self.searchbar.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.searchbar.setPlaceholderText("Search")
         self.widgetLayout.addWidget(self.searchbar)
         self.widgetLayout.addSpacing(14)

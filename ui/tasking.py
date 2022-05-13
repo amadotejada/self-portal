@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# noinspection PyUnresolvedReferences
-from PyQt5.QtCore import QObject, QRunnable, QThreadPool, pyqtSignal, pyqtSlot
+
+from PyQt6.QtCore import QRunnable, QThreadPool, pyqtSlot, QObject
 
 
 class TaskManager(QThreadPool):
