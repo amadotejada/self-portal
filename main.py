@@ -22,16 +22,16 @@ import sys
 import time
 from shutil import which
 
-from PyQt6.QtCore import pyqtSignal, Qt, QRect, QDir
-from PyQt6.QtGui import QIcon, QFont, QFontDatabase, QPixmap, QPainter, QGuiApplication
-from PyQt6.QtWidgets import (
-    QApplication, QWidget, QFrame, QMessageBox, QVBoxLayout, QHBoxLayout, QLabel, QWizard, QWizardPage,
-    QRadioButton, QTextBrowser, QPushButton, QDialog
-)
+from PyQt5.QtCore import QRect, Qt, pyqtSignal
+from PyQt5.QtGui import QFont, QFontDatabase, QIcon, QPainter, QPixmap
+from PyQt5.QtWidgets import (QApplication, QDesktopWidget, QDialog, QFrame,
+                             QHBoxLayout, QLabel, QMessageBox, QPushButton,
+                             QRadioButton, QTextBrowser, QVBoxLayout, QWidget,
+                             QWizard, QWizardPage)
 
 from ui.scrollable import Scrollable
 from ui.tasking import Task, TaskManager, TaskSignals
-from ui.widgets import SideFrame, AppWidget
+from ui.widgets import AppWidget, SideFrame
 
 dir_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -170,21 +170,19 @@ class ThemeWizard(QWizardPage):
 
         self.light_image = WizardImageContainer(self)
         self.light_image.onClicked.connect(lambda: self.light_radio.setChecked(True))
-        self.light_image.setPixmap(QPixmap("resources/light.PNG").scaled(int(1047 / 3), int(667 / 3),
-                                                                         Qt.AspectRatioMode.KeepAspectRatio,
-                                                                         Qt.TransformationMode.SmoothTransformation))
+        self.light_image.setPixmap(QPixmap(f"{dir_path}/resources/light.PNG")
+                                   .scaled(int(1047 / 3), int(667 / 3), Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.light_radio = QRadioButton("Light", self)
         self.light_lay.addWidget(self.light_image)
-        self.light_lay.addWidget(self.light_radio, alignment=Qt.AlignmentFlag.AlignCenter)
+        self.light_lay.addWidget(self.light_radio, alignment=Qt.AlignCenter)
 
         self.dark_image = WizardImageContainer(self)
         self.dark_image.onClicked.connect(lambda: self.dark_radio.setChecked(True))
-        self.dark_image.setPixmap(QPixmap("resources/dark.PNG").scaled(int(1047 / 3), int(667 / 3),
-                                                                       Qt.AspectRatioMode.KeepAspectRatio,
-                                                                       Qt.TransformationMode.SmoothTransformation))
+        self.dark_image.setPixmap(QPixmap(f"{dir_path}/resources/dark.PNG")
+                                  .scaled(int(1047 / 3), int(667 / 3), Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.dark_radio = QRadioButton("Dark", self)
         self.dark_lay.addWidget(self.dark_image)
-        self.dark_lay.addWidget(self.dark_radio, alignment=Qt.AlignmentFlag.AlignCenter)
+        self.dark_lay.addWidget(self.dark_radio, alignment=Qt.AlignCenter)
 
         self.dark_radio.setChecked(True)    # default to dark mode
 
@@ -202,11 +200,10 @@ class Header(QFrame):
         self.dark_overlay = QFrame(self)
         self.dark_overlay.setStyleSheet("background: rgba(0, 0, 0, 128)")
         self.hbox = QHBoxLayout(self)
-        self.hbox.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        self.hbox.setAlignment(Qt.AlignLeft)
 
         self.icon = QLabel(self)
-        self.icon.setPixmap(QPixmap(icon).scaled(75, 75, Qt.AspectRatioMode.KeepAspectRatio,
-                                                 Qt.TransformationMode.SmoothTransformation))
+        self.icon.setPixmap(QPixmap(icon).scaled(75, 75, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.label = QLabel("Company Name", self)
         self.label.setObjectName("header-label")
 
@@ -221,11 +218,12 @@ class Header(QFrame):
         image = self.px
         painter = QPainter(self)
         s = image.size()
-        s.scale(self.width(), self.height(), Qt.AspectRatioMode.KeepAspectRatioByExpanding)
+        s.scale(self.width(), self.height(), Qt.KeepAspectRatioByExpanding)
         r = QRect()
         r.setSize(s)
-        painter.drawPixmap(r, image.scaled(self.width(), self.height(), Qt.AspectRatioMode.KeepAspectRatioByExpanding,
-                                           Qt.TransformationMode.SmoothTransformation))
+        painter.drawPixmap(r, image.scaled(self.width(), self.height(),
+                                           Qt.KeepAspectRatioByExpanding,
+                                           Qt.SmoothTransformation))
         QFrame.paintEvent(self, a0)
 
 
@@ -234,16 +232,17 @@ class LogViewer(QDialog):
         super(LogViewer, self).__init__(p)
         self.vlay = QVBoxLayout(self)
         self.setWindowTitle("Installer Log Viewer")
-        self.resize(480, 320)
+        self.resize(600, 400)
 
         self.viewer = QTextBrowser(self)
         self.close_button = QPushButton("Close", self)
         self.close_button.setFixedSize(100, 35)
         self.close_button.setFocus()
         self.close_button.clicked.connect(self.hide)
+        self.setWindowFlags(Qt.Window | Qt.WindowStaysOnTopHint)
 
         self.vlay.addWidget(self.viewer)
-        self.vlay.addWidget(self.close_button, alignment=Qt.AlignmentFlag.AlignRight)
+        self.vlay.addWidget(self.close_button, alignment=Qt.AlignRight)
 
 
 class MainWindow(QWidget):
@@ -265,7 +264,7 @@ class MainWindow(QWidget):
 
         self.initial_wizard = QWizard(self)
         self.initial_wizard.resize(724, 460)
-        self.initial_wizard.setWizardStyle(QWizard.WizardStyle.ModernStyle)
+        self.initial_wizard.setWizardStyle(QWizard.ModernStyle)
         self.initial_wizard.setWindowTitle("Self Portal Startup")
         # self.initial_wizard.addPage(WizardAbout())
         self.initial_wizard.addPage(ThemeWizard())
@@ -284,7 +283,7 @@ class MainWindow(QWidget):
                          "<a href='https://github.com/amadotejada/self-portal'><br/><br/>GitHub</a>"
         self.aboutwindow = QMessageBox(self)
         aboutIcon = QPixmap(f"{dir_path}/resources/appicon.svg")
-        self.aboutwindow.setIconPixmap(aboutIcon.scaled(100, 100, transformMode=Qt.TransformationMode.SmoothTransformation))
+        self.aboutwindow.setIconPixmap(aboutIcon.scaled(100, 100, transformMode=Qt.SmoothTransformation))
         self.aboutwindow.setWindowTitle("About")
         self.aboutwindow.setText(aboutMsg)
         self.aboutwindow.setInformativeText(informativeMsg)
@@ -309,7 +308,7 @@ class MainWindow(QWidget):
         with open(f"{dir_path}/conf/conf.json", "r+") as cfile:
             conf = json.load(cfile)
             if conf["fresh"]:
-                self.initial_wizard.exec()  # launch wizard if fresh
+                self.initial_wizard.exec_()  # launch wizard if fresh
                 if self.initial_wizard.page(0).dark_radio.isChecked():  # check if dark theme is selected
                     conf["dark"] = True
                 else:
@@ -318,8 +317,6 @@ class MainWindow(QWidget):
                 cfile.seek(0)
                 cfile.truncate(0)
                 json.dump(conf, cfile, indent=2)
-                self.resize(1090, 660)  # set the starting window size
-                self.centerWindow()  # center the window
 
     def change_theme(self):
         with open(f"{dir_path}/conf/conf.json", "r+") as cfile:
@@ -369,7 +366,7 @@ class MainWindow(QWidget):
 
     def centerWindow(self):
         qtRectangle = self.frameGeometry()
-        centerPoint = QGuiApplication.primaryScreen().availableGeometry().center()
+        centerPoint = QDesktopWidget().availableGeometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
 
@@ -455,4 +452,4 @@ if __name__ == '__main__':
     qapp.setFont(QFont("Roboto", 12))
     win = MainWindow()
     win.show()
-    sys.exit(qapp.exec())
+    sys.exit(qapp.exec_())
