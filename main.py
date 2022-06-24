@@ -170,7 +170,7 @@ class ThemeWizard(QWizardPage):
 
         self.light_image = WizardImageContainer(self)
         self.light_image.onClicked.connect(lambda: self.light_radio.setChecked(True))
-        self.light_image.setPixmap(QPixmap(f"{dir_path}/resources/light.PNG")
+        self.light_image.setPixmap(QPixmap(f"{dir_path}/resources/light.png")
                                    .scaled(int(1047 / 3), int(667 / 3), Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.light_radio = QRadioButton("Light", self)
         self.light_lay.addWidget(self.light_image)
@@ -178,7 +178,7 @@ class ThemeWizard(QWizardPage):
 
         self.dark_image = WizardImageContainer(self)
         self.dark_image.onClicked.connect(lambda: self.dark_radio.setChecked(True))
-        self.dark_image.setPixmap(QPixmap(f"{dir_path}/resources/dark.PNG")
+        self.dark_image.setPixmap(QPixmap(f"{dir_path}/resources/dark.png")
                                   .scaled(int(1047 / 3), int(667 / 3), Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.dark_radio = QRadioButton("Dark", self)
         self.dark_lay.addWidget(self.dark_image)
