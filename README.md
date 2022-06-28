@@ -6,6 +6,8 @@
 
 Self Portal is a **cross-platform** desktop application used to deploy software across your endpoints fleet while providing the same user experience across multiple software management solutions.
 
+##
+
 <img src="./screenshots/main.png" width="100%">
 
 This is a front-end for users and does not connect directly with software management tools. Instead, it calls out to the software management tools [below](#supports) to install the packages.
