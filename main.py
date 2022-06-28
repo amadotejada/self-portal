@@ -33,8 +33,13 @@ from ui.scrollable import Scrollable
 from ui.tasking import Task, TaskManager, TaskSignals
 from ui.widgets import AppWidget, SideFrame
 
+from platform import system
+
 dir_path = os.path.dirname(os.path.abspath(__file__))
 
+IS_WINDOWS = system() == "Windows"
+IS_MAC = system() == "Darwin"
+IS_LINUX = system() == "Linux"
 
 class Signal(TaskSignals):
     installCompleted = pyqtSignal()
@@ -251,7 +256,7 @@ class MainWindow(QWidget):
         self.setWindowIcon(QIcon(f"{dir_path}/resources/appicon.svg"))  # change the path to your own icon
         self.setObjectName("window")
         self.setWindowTitle("Self Portal")
-        self.resize(1107, 660)  # set the starting window size
+        self.resize(1100, 660)  # set the starting window size
         self.centerWindow()  # center the window
         self.vlay = QVBoxLayout(self)
         self.vlay.setSpacing(0)
@@ -270,6 +275,7 @@ class MainWindow(QWidget):
         self.initial_wizard.addPage(ThemeWizard())
 
         self.check_fresh()  # check if it's the first time launching the app
+        self.raise_window()
 
         self.header = Header(self, image=f"{dir_path}/resources/header.png", icon=f"{dir_path}/resources/appicon.svg")
 
@@ -278,8 +284,8 @@ class MainWindow(QWidget):
         self.mainframe = MainPage(self)
         self.mainframe.move(255, 0)
 
-        aboutMsg = "Self Portal is a cross-platform desktop app to deploy software across your endpoint fleet"
-        informativeMsg = "\nVersion: 1.0" \
+        aboutMsg = "Self Portal is a cross-platform desktop app to deploy software via Chef\n\nVersion 1.0"
+        informativeMsg = "By: Amado Tejada" \
                          "<a href='https://github.com/amadotejada/self-portal'><br/><br/>GitHub</a>"
         self.aboutwindow = QMessageBox(self)
         aboutIcon = QPixmap(f"{dir_path}/resources/appicon.svg")
@@ -290,8 +296,7 @@ class MainWindow(QWidget):
 
         self.sideframe.moremenu.addAction("Change Theme", self.change_theme)
         self.sideframe.moremenu.addAction("Show installer logs", self.installer_log.show)
-        self.sideframe.moremenu.addAction("GitHub", self.requestapp)
-        self.sideframe.moremenu.addAction("About", self.aboutwindow.show)
+        self.sideframe.moremenu.addAction("About Self Portal", self.aboutwindow.show)
         self.sideframe.tab.searchbar.textChanged.connect(self.search)
         self.taskmanager = TaskManager()
 
@@ -303,6 +308,16 @@ class MainWindow(QWidget):
         self.hlay.addWidget(self.mainframe)
         self.vlay.addWidget(self.header)
         self.vlay.addLayout(self.hlay)
+
+    def raise_window(self):
+        if IS_LINUX:
+            self.show()
+        elif IS_MAC:
+            self.raise_()
+        elif IS_WINDOWS:
+            self.activateWindow()
+        else:
+            self.setWindowState(Qt.WindowState.WindowActive)
 
     def check_fresh(self):
         with open(f"{dir_path}/conf/conf.json", "r+") as cfile:
@@ -452,4 +467,5 @@ if __name__ == '__main__':
     qapp.setFont(QFont("Roboto", 12))
     win = MainWindow()
     win.show()
+    win.raise_window()
     sys.exit(qapp.exec_())
