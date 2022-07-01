@@ -10,22 +10,25 @@ Self Portal is a **cross-platform** desktop application used to deploy software 
 
 <img src="./screenshots/main.png" width="100%">
 
-This is a front-end for users and does not connect directly with software management tools. Instead, it calls out to the software management tools [below](#supports) to install the packages.
+## How does Self Portal work?
 
-Self Portal is in beta and should be tested extensively. 
+This is a front-end GUI for users and does not connect directly with management tools. Instead, it calls out to the management framework [below](#supports) to install the packages.
+
+E.g. For [Chef](https://github.com/chef/chef), when a user selects an app, `chef-client` it will be executed running that specific app cookbook and installing the app in the background.
 
 <!-- To discuss Self Portal join the `#self-portal` channel on the [MacAdmins Slack](https://www.macadmins.org) -->
 
 ### Features
 
 * cross-platform
-* supports various deployment tools
+* supports various deployment frameworks
 * python framework bundled
 * no end-user runtime dependencies
 * dark & light themes
-* log viewer
+* easy to use for end-users
+* log viewer for troubleshooting
 
-### Supports
+### Tested on
 
 | macOS | Windows | Linux |
 |:---------------------:|:---------------------:|:---------------------:|
@@ -34,7 +37,7 @@ Self Portal is in beta and should be tested extensively.
 | [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/)
 | [autopkg](https://github.com/autopkg/autopkg) | [Scoop](https://github.com/ScoopInstaller/Scoop) | [snap](http://manpages.ubuntu.com/manpages/bionic/man1/snap.1.html)/[flatpak](https://docs.flatpak.org/en/latest/using-flatpak.html) |
 
-* last tested: 04/21/22
+* last tested: 06/30/22
 * chef only tool with extensive testing
 * testing [gorilla](https://github.com/1dustindavis/gorilla), [munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [brew](https://github.com/Homebrew)
 
@@ -70,10 +73,15 @@ Self Portal is in beta and should be tested extensively.
 * [Chef](https://github.com/chef/chef) server and cookbooks needs to be pre-configured before using Self Portal.
 * Cookbooks need to exist on Chef and scoped to the endpoints
 * Node needs to be enrolled to the Chef instance.
+
+(Other frameworks will have similar requirements. Defer to your framework documentation for more information on to setup, scoping, and enrolling.)
  
 ## Self Portal Requirements:
 * [pyinstaller](https://pypi.org/project/pyinstaller/) to build executables
 * [PyQt5](https://pypi.org/project/PyQt5/) - Runtime files are bundled in executable for simple deployment.
+
+
+## Prepare a new app
 * Create JSON file for each cookbook/app to deploy - see below.
 * Self Portal needs to run with an admin account and the ability to run `chef-client` with elevated permissions.
   - Depending on your security posture and requirements.
@@ -92,12 +100,17 @@ Self Portal is in beta and should be tested extensively.
 }
 ```
 
-## Build executables
+## Build executables and deploy
 - It's best to build on the targeted OS
 ```cmd
 pyinstaller build.spec
 ```
 Executables output to ```/self-portal/dist/```
+
+* If you're using Chef, create cookbook for Self Portal and deploy the endpoints. 
+    * If you're using other frameworks, use the alternative method to cookbook or remotely package policy.
+
+* Profit
 
 ##
 ### Disclaimer
