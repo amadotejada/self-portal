@@ -39,12 +39,8 @@ Self Portal is in beta and should be tested extensively.
 * testing [gorilla](https://github.com/1dustindavis/gorilla), [munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [brew](https://github.com/Homebrew)
 
 ## User Interface
-
-<details>
-<summary>Preview UI Demo</summary>
-
 ![UI Demo](./screenshots/startdemo.gif)
-</details>
+
 
 ### macOS
 
