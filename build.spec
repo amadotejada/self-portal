@@ -49,9 +49,9 @@ darwin = COLLECT(exe,
 if sys.platform == 'darwin':
     app = BUNDLE(darwin,
             name='Self Portal.app',
-            icon='appicon.ico',
+            icon='appicon.icns',
             bundle_identifier=None,
-            version='0.7.0',
+            version='0.1.0',
             info_plist={
                 'NSPrincipalClass': 'NSApplication',
                 'NSAppleScriptEnabled': False,
@@ -60,7 +60,7 @@ if sys.platform == 'darwin':
                 'CFBundleDocumentTypes': [
                     {
                         'CFBundleTypeName': 'app',
-                        'CFBundleTypeIconFile': 'appicon.ico',
+                        'CFBundleTypeIconFile': 'appicon.icns',
                         'LSItemContentTypes': ['com.amadotejada.selfportal'],
                         'LSHandlerRank': 'Owner',
                         'CFBundleTypeRole': 'None'

@@ -70,9 +70,38 @@ Self Portal is in beta and should be tested extensively.
 |:-----:|:-----:|
 | <img src="./screenshots/themes.png" width="100%">   | <img src="./screenshots/logviewer.png" width="100%">   |
 
-## Getting Started
+## Chef Requirements:
+* [Chef](https://github.com/chef/chef) server and cookbooks needs to be pre-configured before using Self Portal.
+* Cookbooks need to exist on Chef and scoped to the endpoints
+* Node needs to be enrolled to the Chef instance.
+ 
+## Self Portal Requirements:
+* [pyinstaller](https://pypi.org/project/pyinstaller/) to build executables
+* [PyQt5](https://pypi.org/project/PyQt5/) - Runtime files are bundled in executable for simple deployment.
+* Create JSON file for each cookbook/app to deploy - see below.
+* Self Portal needs to run with an admin account and the ability to run `chef-client` with elevated permissions.
+  - Depending on your security posture and requirements.
+  - There are several ways of doing this per OS. e.g. sudoers, [polkit](https://linux.die.net/man/8/polkit), [pkexec](https://linux.die.net/man/1/pkexec), [gsudo](https://github.com/gerardog/gsudo)
 
-[Wiki - work in progress](https://github.com/amadotejada/self-portal/wiki)
+##### Apps JSON schema
+```json
+{
+  "name": "Chrome",
+  "id": "chrome",
+  "description": "Chrome is a fast, secure, free web browser. The browser built by Google.",
+  "category": ["browser"],
+  "icon": "resources/icons/chrome.png",
+  "bashcmd": "pkexec chef-client -o recipe[app_chrome] -L /var/log/chef/self_portal.log"
+  \\ Self Portal calls the bashcmd to install the software via Chef.
+}
+```
+
+## Build executables
+- It's best to build on the targeted OS
+```cmd
+pyinstaller build.spec
+```
+Executables output to ```/self-portal/dist/```
 
 ##
 ### Disclaimer
