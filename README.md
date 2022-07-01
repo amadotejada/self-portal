@@ -4,7 +4,7 @@
 
 [![build](https://github.com/amadotejada/self-portal/actions/workflows/python.yml/badge.svg)](https://github.com/amadotejada/self-portal/actions/workflows/python.yml)
 
-Self Portal is a **cross-platform** desktop application used to deploy software across your endpoints fleet while providing the same user experience across multiple software management solutions.
+Self Portal is a **cross-platform** desktop application used to deploy software across your endpoints fleet while providing the same user experience via [Chef](https://github.com/chef/chef) and other software management solutions.
 
 ##
 
@@ -29,6 +29,7 @@ E.g. For [Chef](https://github.com/chef/chef), when a user selects an app, `chef
 * log viewer for troubleshooting
 
 ### Tested on
+This tool was made around Chef on Linux, but since its a front-end, it can be used with any other frameworks.
 
 | macOS | Windows | Linux |
 |:---------------------:|:---------------------:|:---------------------:|
