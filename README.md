@@ -38,8 +38,8 @@ This tool was made around Chef on Linux, but since its a front-end, it can be us
 | [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/) | [pip](https://pip.pypa.io/en/stable/getting-started/)
 | [autopkg](https://github.com/autopkg/autopkg) | [Scoop](https://github.com/ScoopInstaller/Scoop) | [snap](http://manpages.ubuntu.com/manpages/bionic/man1/snap.1.html)/[flatpak](https://docs.flatpak.org/en/latest/using-flatpak.html) |
 
-* last tested: 06/30/22
-* chef only tool with extensive testing
+* last tested: 01/18/24
+* chef/salt used to test on macOS/linux
 * testing [gorilla](https://github.com/1dustindavis/gorilla), [munki](https://github.com/munki/munki/wiki/managedsoftwareupdate), and [brew](https://github.com/Homebrew)
 
 ## User Interface
